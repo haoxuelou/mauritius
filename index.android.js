@@ -4,7 +4,9 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -12,20 +14,14 @@ import {
   View
 } from 'react-native';
 
+import Welcome from './src/welcome';
+
 export default class mauritius extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!test
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      <View>
+        <Text>fewtefwfeww</Text>
+        <Welcome/>
       </View>
     );
   }
