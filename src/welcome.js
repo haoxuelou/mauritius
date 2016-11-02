@@ -31,7 +31,7 @@ export default class extends Component {
                     </Text>
                 </View>
                 <View>
-                    <Icon name="ios-stopwatch" size={24} color="#666">
+                    <Icon name="ios-redo" size={24} color="#666">
                         点击进入
                     </Icon>
                 </View>
