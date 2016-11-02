@@ -11,39 +11,37 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
 
 import Welcome from './src/welcome';
 
 export default class mauritius extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
   render() {
-    return (
-      <View>
-        <Text>fewtefwfeww</Text>
-        <Welcome/>
-      </View>
+    return ( < Navigator initialRoute = {
+        {
+          index: 0,
+          component: Welcome
+        }
+      }
+      configureScene = {
+        (route, routeStack) => Navigator.SceneConfigs.HorizontalSwipeJumpFromRight
+      }
+      renderScene = {
+        (route, navigator) => {
+          return <route.component {...route.params} navigator = { navigator } />
+        }
+      }
+      / >
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('mauritius', () => mauritius);
