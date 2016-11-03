@@ -7,11 +7,13 @@ import {
     Navigator,
     Text,
     TouchableHighlight,
+    TouchableOpacity,
     View
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import Menu from './menu';
+import Button from './button';
 
 const styles = StyleSheet.create({
     container: {
@@ -21,7 +23,8 @@ const styles = StyleSheet.create({
     },
     entry: {
         justifyContent: 'flex-end',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: 10,
     },
     info: {
         margin: 10,
@@ -31,10 +34,11 @@ const styles = StyleSheet.create({
     }
 });
 
-export default class extends Component {
-    _jump() {
+export default class Welcome extends Component {
+    _jump = () => {
         this.props.navigator.push({
-            index: 0,
+            index: 1,
+            title: '首页',
             component: Menu
         });
     }
@@ -52,9 +56,7 @@ export default class extends Component {
                     </Text>
                 </View>
                 <View style={styles.entry}>
-                    <Icon name="ios-redo" size={24} color="#666" onPress={()=>this._jump()}>
-                        点击进入
-                    </Icon>
+                    <Button text="开始体验" onPress={this._jump}/>
                 </View>
             </View>
         );
