@@ -39,6 +39,7 @@ export default class Welcome extends Component {
         this.props.navigator.push({
             index: 1,
             title: '首页',
+            display: false,
             component: Menu
         });
     }

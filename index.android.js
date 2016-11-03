@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   navBar: {
     borderBottomWidth: 1,
     borderBottomColor: "#ddd",
+    backgroundColor: "yellow",
   },
   navTitle: {
     paddingTop: 10,
@@ -93,6 +94,7 @@ export default class mauritius extends Component {
     return ( < Navigator initialRoute = {
         {
           index: 0,
+          display: false,
           component: this.state.load ? Menu : Welcome
         }
       }
@@ -105,7 +107,7 @@ export default class mauritius extends Component {
         }
       }
       navigationBar = {
-        <Navigator.NavigationBar
+        <NavigationBar
           routeMapper={this.routeMapper}
           style={styles.navBar}
         />
