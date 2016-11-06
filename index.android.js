@@ -17,8 +17,14 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import Welcome from './src/welcome';
-import Menu from './src/menu';
+import {
+  createStore,
+  applyMiddleware
+} from 'redux';
+import {
+  getRouteMap,
+  registerNavigator
+} from './route';
 
 const styles = StyleSheet.create({
   navBar: {
@@ -95,15 +101,24 @@ export default class mauritius extends Component {
         {
           index: 0,
           display: false,
-          component: this.state.load ? Menu : Welcome
+          name: 'Welcome',
         }
       }
       configureScene = {
-        (route, routeStack) => Navigator.SceneConfigs.HorizontalSwipeJump
+        (route, routeStack) => {
+          let sceneAnimation = getRouteMap().get(route.name).sceneAnimation;
+          if (sceneAnimation) {
+            return sceneAnimation;
+          }
+
+          Navigator.SceneConfigs.HorizontalSwipeJump;
+        }
       }
       renderScene = {
         (route, navigator) => {
-          return <route.component {...route.params} navigator = { navigator } />
+          registerNavigator(navigator);
+          let Component = getRouteMap().get(route.name).component;
+          return <Component {...route.params} navigator = { navigator } />
         }
       }
       navigationBar = {
