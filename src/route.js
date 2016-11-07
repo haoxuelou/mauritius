@@ -1,12 +1,10 @@
-/**
- * Created by lipeiwei on 16/10/4.
- */
-import Welcome from './welcome';
-import Menu from './menu';
-
 import {
   Navigator,
 } from 'react-native';
+
+import Welcome from './welcome';
+import Menu from './menu';
+import MainContainer from './module/mainContainer';
 
 let navigator;
 
@@ -22,16 +20,29 @@ let navigator;
 // VerticalUpSwipeJump
 // VerticalDownSwipeJump
 
-const routeMap = new Map();
-
-routeMap.set('Welcome', {
-  component: Welcome
-});
-
-routeMap.set('Menu', {
-  component: Menu,
-  sceneAnimation: Navigator.SceneConfigs.FadeAndroid
-});
+const routeMap = new Map([
+  [
+    "Welcome", 
+    {
+      component: Welcome,
+      display: false
+    }
+  ],
+  [
+    "Menu", 
+    {
+      component: Menu,
+      sceneAnimation: Navigator.SceneConfigs.FadeAndroid
+    }
+  ],
+  [
+    "MainContainer",
+    {
+      component: MainContainer,
+      display: false
+    }
+  ]
+]);
 
 
 export function registerNavigator(tempNavigator) {

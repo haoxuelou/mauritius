@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 
 var Icon = require('react-native-vector-icons/FontAwesome');
-import Button from './button';
-import Util from './utils';
+import Button from './component/button';
+import Util from './util/utils';
 
 const styles = StyleSheet.create({
 	container: {

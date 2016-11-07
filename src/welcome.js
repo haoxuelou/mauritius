@@ -12,8 +12,7 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import Menu from './menu';
-import Button from './button';
+import Button from './component/button';
 
 const styles = StyleSheet.create({
     container: {
@@ -40,7 +39,7 @@ export default class Welcome extends Component {
             index: 1,
             title: '首页',
             display: false,
-            component: Menu
+            name: 'MainContainer'
         });
     }
     render() {
