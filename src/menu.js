@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 });
 
 
-export default class extends Component {
+export default class Menu extends Component {
 	constructor(props) {
 		super(props);
 
@@ -86,16 +86,16 @@ export default class extends Component {
 
 	render() {
 		return ( < ListView dataSource = {
-				this.state.dataSource
-			}
-			pageSize = {
-				3
-			}
-			contentContainerStyle = {
-				styles.grid
-			}
-			refreshControl = {
-				<RefreshControl
+					this.state.dataSource
+				}
+				pageSize = {
+					3
+				}
+				contentContainerStyle = {
+					styles.grid
+				}
+				refreshControl = {
+					<RefreshControl
 		            refreshing={this.state.isRefreshing}
 		            onRefresh={this._onRefresh.bind(this)}
 		            tintColor="#ff0000"
@@ -103,16 +103,15 @@ export default class extends Component {
 		            titleColor="#00ff00"
 		            colors={['#ff0000', '#00ff00', '#0000ff']}
 		            progressBackgroundColor="#ffff00"/>
-			}
-			renderRow = {
-				(rowData) => {
-					<View style={styles.itemLayout}>
-						
+				}
+				renderRow = {
+					(rowData) => {
+						<View style={styles.itemLayout}>
 						<Text>{rowData}</Text>
 					</View>
+					}
 				}
-			}
-			/>
+				/>
 		);
 	}
 }

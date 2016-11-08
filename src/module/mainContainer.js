@@ -9,7 +9,13 @@ import {
 
 import ScrollableTabView from 'react-native-scrollable-tab-view';
 
-import TabBar from '../component/tabBar';
+import TabBar   from '../component/tabBar';
+
+import Home     from './home';
+import Plane    from './plane';
+import Camera   from './camera';
+import ThumbsUp from './thumbsUp';
+import Bell     from './bell';
 
 const styles = StyleSheet.create({
 	/**
@@ -49,11 +55,11 @@ export default class MainContainer extends Component {
 						return <TabBar tabBarResources={TAB_BAR_RESOURCES}/>
 					}
 				}>
-				<Text>1214341</Text>
-				<Text>1214341</Text>
-				<Text>1214341</Text>
-				<Text>1214341</Text>
-				<Text>1214341</Text>
+				<Home style={styles.subView}/>
+				<Plane style={styles.subView}/>
+				<Camera style={styles.subView}/>
+				<ThumbsUp style={styles.subView}/>
+				<Bell style={styles.subView}/>
 			</ScrollableTabView>
 		);
 	}

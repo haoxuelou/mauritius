@@ -12,7 +12,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-  Text
+    Text
 } from 'react-native';
 
 import IconFa from 'react-native-vector-icons/FontAwesome'
@@ -66,7 +66,6 @@ export default class TabBar extends Component {
                 <IconFa name={tabBarResources[index][0]} size={30} color={activeTab === index?'#3b5998':'#000000'}></IconFa>
                 <Text style={[{fontSize:10}, (activeTab === index) && {color:'#3b5998'}]}>{tabBarResources[index][1]}</Text>
               </TouchableOpacity>
-              
             );
           })
         }

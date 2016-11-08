@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import Menu from './menu';
 import Button from './component/button';
 
 const styles = StyleSheet.create({
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
 
 export default class Welcome extends Component {
     _jump = () => {
-        this.props.navigator.push({
+        this.props.navigator.resetTo({
             index: 1,
             title: '首页',
             display: false,

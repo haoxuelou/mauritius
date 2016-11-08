@@ -1,3 +1,6 @@
+/**
+ * Created by lipeiwei on 16/10/4.
+ */
 import {
   Navigator,
 } from 'react-native';
@@ -5,6 +8,7 @@ import {
 import Welcome from './welcome';
 import Menu from './menu';
 import MainContainer from './module/mainContainer';
+import IntroView from './component/introView';
 
 let navigator;
 
@@ -41,9 +45,14 @@ const routeMap = new Map([
       component: MainContainer,
       display: false
     }
+  ],
+  [
+    "IntroView",
+    {
+      component: IntroView,
+    }
   ]
 ]);
-
 
 export function registerNavigator(tempNavigator) {
   if (navigator) {
