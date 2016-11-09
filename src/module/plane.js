@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import BaseComponent from '../base/baseContainer';
+import WebViewPage from '../component/webViewPage';
 
 export default class Plane extends BaseComponent {
 	constructor(props) {
@@ -16,10 +17,10 @@ export default class Plane extends BaseComponent {
 
 	  this.fetchData = this.fetchData.bind(this);
 
-	  let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+	  // let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 	
 	  this.state = {
-	  	ds
+	  	// ds
 	  };
 
 	  this._data = [];
@@ -33,7 +34,7 @@ export default class Plane extends BaseComponent {
 	}
 
 	componentDidMount() {
-		InteractionManager.runAfterInteractions(this.fetchData);
+		// InteractionManager.runAfterInteractions(this.fetchData);
 	}
 
 	fetchData() {
@@ -55,10 +56,7 @@ export default class Plane extends BaseComponent {
 
 	renderBody() {
 		return (
-			<ListView 
-				dataSource={this.state.ds}
-				renderRow={(rowData)=><Text>{rowData}</Text>}
-			/>
+			<WebViewPage uri={'http://www.mafengwo.cn/i/3403181.html'} />
 		);
 	}
 }
