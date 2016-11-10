@@ -4,8 +4,6 @@ import {
 	View,
 	Text,
 	StyleSheet,
-	InteractionManager,
-	ListView,
 } from 'react-native';
 
 import BaseComponent from '../base/baseContainer';
@@ -14,16 +12,10 @@ import WebViewPage from '../component/webViewPage';
 export default class Plane extends BaseComponent {
 	constructor(props) {
 	  super(props);
-
-	  this.fetchData = this.fetchData.bind(this);
-
-	  // let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 	
 	  this.state = {
 	  	// ds
 	  };
-
-	  this._data = [];
 	}
 
 	getNavigatorBarProps() {
@@ -37,26 +29,9 @@ export default class Plane extends BaseComponent {
 		// InteractionManager.runAfterInteractions(this.fetchData);
 	}
 
-	fetchData() {
-		this._data = this._data.concat([
-			'test',
-			'test',
-			'test',
-			'test',
-			'test',
-			'test',
-			'test',
-			'test',
-		]);
-
-		this.setState({
-			ds: this.state.ds.cloneWithRows(this._data)
-		})
-	}
-
 	renderBody() {
 		return (
-			<WebViewPage uri={'http://www.mafengwo.cn/i/3403181.html'} />
+			<WebViewPage uri={require('../webpage/plane/1.html')} />
 		);
 	}
 }

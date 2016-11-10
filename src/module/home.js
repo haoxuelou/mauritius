@@ -7,7 +7,6 @@ import {
 	InteractionManager,
 	ListView,
 	TouchableOpacity,
-	Alert,
 } from 'react-native';
 
 import IconFA from 'react-native-vector-icons/FontAwesome';
@@ -82,7 +81,7 @@ export default class Home extends BaseComponent {
 			<ListView 
 				dataSource={this.state.ds}
 				renderRow={
-					(rowData)=>(
+					(rowData, sectionID, rowID)=>(
 						<TouchableOpacity onPress={() => this.pressHandle(rowData)}>
 							<View style={styles.rowStyle}>
 								<Text>{rowData}</Text>

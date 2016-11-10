@@ -95,13 +95,15 @@ class WebViewPage extends Component {
 	}
 
 	render() {
+		let {uri} = this.props;
+		const source = typeof uri === 'string'?{uri}:uri;
 		return (
 			<View style={styles.container}>
 				<WebView
 					ref={(ref) => { this.webview = ref; }}
 					automaticallyAdjustContentInsets={false}
 					style={styles.base}
-					source={{ uri: this.props.uri }}
+					source={source}
 					javaScriptEnabled
 					domStorageEnabled
 					startInLoadingState

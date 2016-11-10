@@ -6,10 +6,10 @@ import {
 	View,
 	Text,
 	StyleSheet,
-	ListView,
 } from 'react-native';
 
 import BaseComponent from '../base/baseContainer'
+import WebViewPage from './webViewPage';
 
 const styles = StyleSheet.create({
 	container: {
@@ -22,12 +22,6 @@ const styles = StyleSheet.create({
 class IntroView extends BaseComponent {
 	constructor(props) {
 		super(props);
-
-		let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-
-		this.state = {
-			ds: ds.cloneWithRows([this.props.intro])
-		};
 	}
 
 	getNavigatorBarProps() {
@@ -38,10 +32,7 @@ class IntroView extends BaseComponent {
 
 	renderBody() {
 		return (
-			<ListView
-				dataSource={this.state.ds}
-				renderRow={(rowData)=><Text style={styles.container}>{rowData}</Text>}
-			/>
+			<WebViewPage uri={this.props.intro}/>
 		);
 	};
 }
