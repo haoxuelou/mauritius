@@ -46,3 +46,6 @@ temp-resource/
 *.jks
 
 android/.gradle
+android/.idea
+android/*.iml
+android/local.properties
