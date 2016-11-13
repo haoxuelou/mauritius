@@ -67,7 +67,7 @@ export default class Home extends BaseComponent {
 	}
 
 	pressHandle(key) {
-		getNavigator().push({
+		 getNavigator().push({
 			name: 'IntroView',
 			params: {
 				intro: HomeDetail.get(key),

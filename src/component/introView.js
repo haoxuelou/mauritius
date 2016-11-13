@@ -37,4 +37,4 @@ class IntroView extends BaseComponent {
 	};
 }
 
-export default IntroView;
+export default IntroView; 

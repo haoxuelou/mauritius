@@ -49,17 +49,40 @@ const CameraList = [
 
 const CameraDetail = new Map([
 	[
-
+		CameraList[0], require('../webpage/camera/1.html')
 	],
 	[
+		CameraList[1], require('../webpage/camera/2.html')
 	],
 	[
+		CameraList[2], require('../webpage/camera/3.html')
 	],
 	[
+		CameraList[3], require('../webpage/camera/4.html')
 	],
 	[
+		CameraList[4], require('../webpage/camera/5.html')
 	],
 	[
+		CameraList[5], require('../webpage/camera/6.html')
+	],
+	[
+		CameraList[6], require('../webpage/camera/7.html')
+	],
+	[
+		CameraList[7], require('../webpage/camera/8.html')
+	],
+	[
+		CameraList[8], require('../webpage/camera/9.html')
+	],
+	[
+		CameraList[9], require('../webpage/camera/10.html')
+	],
+	[
+		CameraList[10], require('../webpage/camera/11.html')
+	],
+	[
+		CameraList[11], require('../webpage/camera/12.html')
 	],
 ]);
 

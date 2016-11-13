@@ -4,10 +4,10 @@ import {
 	View,
 	Text,
 	StyleSheet,
-	InteractionManager,
 } from 'react-native';
 
 import BaseComponent from '../base/baseContainer';
+import WebViewPage from '../component/webViewPage';
 
 export default class ThumbsUp extends BaseComponent {
 	constructor(props) {
@@ -24,14 +24,12 @@ export default class ThumbsUp extends BaseComponent {
 	}
 
 	componentDidMount() {
-		InteractionManager.runAfterInteractions(this.fetchData);
-	}
-
-	fetchData() {
-
+		// InteractionManager.runAfterInteractions(this.fetchData);
 	}
 
 	renderBody() {
-		return <View><Text>thumbs-up</Text></View>;
+		return (
+			<WebViewPage uri={require('../webpage/thumbsUp/1.html')} />
+		);
 	}
 }

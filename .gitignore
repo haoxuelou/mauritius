@@ -44,3 +44,5 @@ temp-resource/
 
 #忽略Android签名文件
 *.jks
+
+android/.gradle
