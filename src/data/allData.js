@@ -63,7 +63,26 @@ const CameraDetail = new Map([
 	],
 ]);
 
+const BellList = [
+	'（一）常用电话',
+	'（二）领事提醒',
+	'（三）领事保护与协助',
+];
+
+const BellDetail = new Map([
+	[
+		BellList[0], require('../webpage/bell/1.html')
+	],
+	[
+		BellList[1], require('../webpage/bell/2.html')
+	],
+	[
+		BellList[2], require('../webpage/bell/3.html')
+	],
+]);
+
 export {
 	HomeList, HomeDetail,
 	CameraList, CameraDetail,
+	BellList, BellDetail,
 };

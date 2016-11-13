@@ -16,5 +16,11 @@ class CustomRow extends Components {
 	  this.state = {};
 	}
 
-	
+	render() {
+		const {
+			section,
+			content
+		} = this.props;
+
+	}
 }
