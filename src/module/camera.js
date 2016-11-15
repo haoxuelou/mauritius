@@ -65,12 +65,14 @@ export default class Camera extends BaseComponent {
 	}
 
 	pressHandle(key) {
-		getNavigator().push({
-			name: 'IntroView',
-			params: {
-				intro: CameraDetail.get(key),
-				title: key
-			}
+		InteractionManager.runAfterInteractions(() => {
+			getNavigator().push({
+				name: 'IntroView',
+				params: {
+					intro: CameraDetail.get(key),
+					title: key
+				}
+			});
 		});
 	}
 

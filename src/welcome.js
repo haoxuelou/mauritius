@@ -8,6 +8,7 @@ import {
     Text,
     TouchableHighlight,
     TouchableOpacity,
+    InteractionManager,
     View
 } from 'react-native';
 

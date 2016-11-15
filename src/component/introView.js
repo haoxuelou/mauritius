@@ -6,10 +6,12 @@ import {
 	View,
 	Text,
 	StyleSheet,
+	InteractionManager,
 } from 'react-native';
 
 import BaseComponent from '../base/baseContainer'
 import WebViewPage from './webViewPage';
+import Lv from './loadingView';
 
 const styles = StyleSheet.create({
 	container: {
@@ -22,6 +24,15 @@ const styles = StyleSheet.create({
 class IntroView extends BaseComponent {
 	constructor(props) {
 		super(props);
+		this.state = {
+			loading: false
+		};
+	}
+
+	componentDidMount() {
+		this.setState({
+			loading: true
+		});
 	}
 
 	getNavigatorBarProps() {
@@ -31,6 +42,12 @@ class IntroView extends BaseComponent {
 	}
 
 	renderBody() {
+		if(!this.state.loading) {
+			return (
+				<Lv/>
+			);
+		}
+		
 		return (
 			<WebViewPage uri={this.props.intro}/>
 		);

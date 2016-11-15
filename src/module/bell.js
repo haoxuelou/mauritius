@@ -68,12 +68,14 @@ export default class Bell extends BaseComponent {
 	}
 
 	pressHandle(key) {
-		getNavigator().push({
-			name: 'IntroView',
-			params: {
-				intro: BellDetail.get(key),
-				title: key
-			}
+		InteractionManager.runAfterInteractions(() => {
+			getNavigator().push({
+				name: 'IntroView',
+				params: {
+					intro: BellDetail.get(key),
+					title: key
+				}
+			});
 		});
 	}
 
